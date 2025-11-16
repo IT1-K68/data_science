@@ -1,0 +1,13 @@
+# python=3.10
+streamlit
+langchain
+langchain-community
+langchain-openai
+langchain-huggingface
+python-dotenv
+sentence-transformers
+pandas
+qdrant-client
+chardet
+langchain_openai
+langchain-qdrant
