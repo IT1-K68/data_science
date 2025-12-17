@@ -11,3 +11,5 @@ qdrant-client
 chardet
 langchain_openai
 langchain-qdrant
+streamlit
+fastapi[standard]

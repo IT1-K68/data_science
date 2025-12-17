@@ -1,0 +1,12 @@
+[theme]
+base="dark"
+primaryColor="#4F8BF9"
+backgroundColor="#0E1117"
+secondaryBackgroundColor="#1A1D23"
+textColor="#FAFAFA"
+font="sans serif"
+
+baseRadius="0.75rem"
+buttonRadius="1rem"
+borderColor="#2A2E35"
+showWidgetBorder=true
