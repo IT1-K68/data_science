@@ -13,3 +13,6 @@ langchain_openai
 langchain-qdrant
 streamlit
 fastapi[standard]
+motor
+bcrypt
+psycopg2
