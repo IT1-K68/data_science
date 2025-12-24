@@ -1,0 +1,3 @@
+[submodule "src/app/frontend/html_code"]
+	path = src/app/frontend/html_code
+	url = https://github.com/khoatran18/intro_ds_fe.git

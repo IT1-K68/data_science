@@ -1,18 +1,20 @@
 from datetime import datetime
 from motor.motor_asyncio import AsyncIOMotorDatabase
 from typing import List
+from bson import ObjectId
+
+from ..model.message_model import Message
+
 
 async def insert_message(
         db: AsyncIOMotorDatabase,
-        chat_id: int,
-        role: str,
-        content: str,
-):
+        model: Message
+) -> dict:
     doc: dict = {
-        "chat_id": chat_id,
-        "role": role,
-        "content": content,
-        "created_at": datetime.now(),
+        "chat_id": ObjectId(model.chat_id),
+        "role": model.role,
+        "content": model.content,
+        "created_at": model.created_at,
     }
     result = await db.messages.insert_one(doc)
     doc["_id"] = result.inserted_id
@@ -22,16 +24,22 @@ async def insert_message(
 async def get_messages_by_chat_id(
         db: AsyncIOMotorDatabase,
         chat_id: str,
-        limit: int = 100
+        limit: int = 10,
+        offset: datetime = None,
 ) -> List[dict]:
+
+    query: dict = {"chat_id": ObjectId(chat_id)}
+    if offset:
+        query["created_at"] = {"$lt": offset}
+
     cursor = (
         db.messages
-            .find({"chat_id": chat_id})
-            .sort("created_at", 1)
+            .find(query)
+            .sort("created_at", -1)
             .limit(limit)
     )
 
-    return await cursor.to_list(length=limit)
+    return await cursor.to_list()
 
 
 
