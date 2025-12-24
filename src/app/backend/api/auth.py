@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from dto.auth import RegisterDTO, LoginDTO, UserResponseDTO
-from service.auth_service import register, login
-from core.postgres_db import get_pg_db
+from ..dto.auth import RegisterDTO, LoginDTO, UserResponseDTO
+from ..service.auth_service import register, login
+from ..core.postgres_db import get_pg_db
 
 router = APIRouter()
 

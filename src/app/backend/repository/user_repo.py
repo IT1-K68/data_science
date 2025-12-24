@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from model.user import User
+from ..model.user import User
 
 def is_username_exists(db: Session, username: str) -> bool:
     return db.query(User.id).filter(User.username == username).first() is not None
