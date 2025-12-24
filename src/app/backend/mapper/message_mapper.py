@@ -1,4 +1,4 @@
-from dto.chat import MessageResponseDTO
+from ..dto.chat import MessageResponseDTO
 
 def message_to_dto(doc: dict) -> MessageResponseDTO:
     return MessageResponseDTO(

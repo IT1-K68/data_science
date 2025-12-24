@@ -1,11 +1,11 @@
 from motor.motor_asyncio import AsyncIOMotorDatabase
 
-from mapper.message_mapper import message_to_dto
-from repository.message_repo import (
+from ..mapper.message_mapper import message_to_dto
+from ..repository.message_repo import (
     insert_message,
     get_messages_by_chat_id
 )
-from dto.chat import ChatHistoryResponseDTO
+from ..dto.chat import ChatHistoryResponseDTO
 
 async def send_message(
         db: AsyncIOMotorDatabase,

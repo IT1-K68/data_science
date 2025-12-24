@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from motor.motor_asyncio import AsyncIOMotorDatabase
-from dto.chat import SendMessageDTO
-from service.chat_service import send_message, get_messages_by_chat_id, get_chat_history
-from core.mongo_db import get_mongo_db
+from ..dto.chat import SendMessageDTO
+from ..service.chat_service import send_message, get_messages_by_chat_id, get_chat_history
+from ..core.mongo_db import get_mongo_db
 
 router = APIRouter()
 

@@ -1,12 +1,12 @@
 import bcrypt
 from sqlalchemy.orm import Session
-from dto.auth import RegisterDTO, LoginDTO, UserResponseDTO
-from repository.user_repo import (
+from ..dto.auth import RegisterDTO, LoginDTO, UserResponseDTO
+from ..repository.user_repo import (
     is_username_exists,
     get_user_by_username,
     create_user,
 )
-from mapper.user_mapper import user_to_dto
+from ..mapper.user_mapper import user_to_dto
 
 
 def register(db: Session, dto: RegisterDTO) -> UserResponseDTO:
